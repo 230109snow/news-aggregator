@@ -1,5 +1,10 @@
-# NewsAggregator
+# News Aggregator
 
+The goal of this application is to aggregate news stories and display them.
+
+
+P0
+---
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.1.
 
 ## Development server

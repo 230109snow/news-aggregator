@@ -1,0 +1,14 @@
+li {
+    display: inline;
+    margin: 5px;
+    padding: 4px;
+    border-radius: 5px;
+    background-color: lightgray;
+}
+
+nav {
+    border: solid 1px brown;
+    border-radius: 3px;
+    margin: 5px;
+    background-color: grey;
+}

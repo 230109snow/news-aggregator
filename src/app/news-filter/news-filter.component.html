@@ -1,0 +1,36 @@
+<div class="container">
+    <form [formGroup]="newsFilterForm">
+        <div class="filter-section" id="display-filter">
+            <label class="form-lbl" for="numstories">*Number of Stories : </label>
+            <input type="number" placeholder="#" name="number-of-stories" id="numstories" formControlName="number">
+            <div *ngIf="newsFilterForm.controls['number'].invalid && newsFilterForm.controls['number'].touched">
+                <span style="color : red" *ngIf="newsFilterForm.controls['number'].errors?.['required']">Number required</span>
+                <span style="color : red" *ngIf="newsFilterForm.controls['number'].errors?.['min']">Minimum of 1 story</span>
+                <span style="color : red" *ngIf="newsFilterForm.controls['number'].errors?.['max']">Maximum of 10 stories</span>
+            </div>
+<!--             <label class="form-lbl" for="sort">Sort By</label>
+            <input type="radio"> -->
+        </div>
+
+        <div class="filter-section" id="content-filter">
+            <label class="form-lbl" for="textinput">Article contains:</label>
+            <input type="text" placeholder="Enter keyword(s)" name="text" id="textinput" formControlName="text">
+            <div *ngIf="newsFilterForm.controls['text'].invalid && newsFilterForm.controls['text'].touched">
+                <span style="color : red" *ngIf="newsFilterForm.controls['text'].errors?.['pattern']">Alphanumeric characters seperated by whitespace and/or "." ONLY!</span>
+            </div>
+        </div>
+
+        <div class="filter-section" id="origin-filter">
+            <label class="form-lbl" for="authors">Authors : </label>
+            <input type="text" placeholder="Authors names (comma seperated)" name="authors" id="authors" formControlName="authors">
+            <div *ngIf="newsFilterForm.controls['authors'].invalid && newsFilterForm.controls['authors'].touched">
+                <span style="color : red" *ngIf="newsFilterForm.controls['authors'].errors?.['pattern']">Must be like: "firstname[ middlenames][ lastname][, (more full names)]" e.g. "Elon Musk, Joe r biden , john Doe "</span>
+            </div>
+            <label class="form-lbl" for="earliest-publish-date">Published After: </label>
+            <input type="datetime-local" name="earliest-publish-date" id="earliest-publish-date" formControlName="publishedAfter">
+        </div>
+        <br>
+        <button class="submit_btn" (click)="applyFilter()">Filter</button>
+    </form>
+</div>
+

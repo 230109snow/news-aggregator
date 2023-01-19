@@ -1,0 +1,32 @@
+.container {
+    padding: 10px;
+    border: solid grey 1px;
+    border-radius: 5pt;
+
+}
+
+.filter-section {
+    display: inline-block;
+    margin: 2%;
+    border: solid lightgrey 1px;
+    padding: 1%;
+    width: 27%;
+}
+.form-lbl {
+    padding: 5px 0;
+    margin: 5%;
+}
+
+
+#numstories {
+    width: 5ch;
+}
+#authors {
+    width: 94%;
+}
+#textinput {
+    width: 94%;
+}
+#earliest-publish-date {
+    width: 95%;
+}

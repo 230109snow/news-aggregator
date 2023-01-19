@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 /* import { ReactiveFormsModule, FormsModule, FormGroup, FormControl, Validators } from '@angular/forms'; */
 import { NewsAPIService } from '../news-api.service';
 
@@ -14,7 +15,7 @@ export class GetnewsComponent implements OnInit{
   ////new Date().toISOString() 
   ////this.getDatetimeMax();
 
-  constructor(private newsAPI : NewsAPIService) {}
+  constructor(private newsAPI : NewsAPIService, private router: Router) {}
 
   getDatetimeMax() : Date | string {
     //TODO ideally, this would give the time 1-5 min ago
@@ -22,14 +23,16 @@ export class GetnewsComponent implements OnInit{
     return now.toISOString();
   }
 
-  getNews(form : any) : any {
+/*   getNews() : any {
     const retrievalTimestamp : string = Date(); 
     console.log('retrieved', retrievalTimestamp);
-    console.log(form);
-    this.newsAPI.getNews_fromAPI('/world_news/searchnews');
+    this.newsAPI.getNews_fromAPI();
 
-    console.log(this.getDatetimeMax());
     return false;
+  } */
+
+  gotohelp() : void {
+    this.router.navigate(['help']);
   }
 
   ngOnInit(): void {
